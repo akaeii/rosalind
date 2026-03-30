@@ -1,12 +1,6 @@
-s1 = "GAGCCTACTAACGGGAT"
-s2 = "CATCGTAATGACGGCCT"
-
 def dH(s1,s2):
-    dist = 0
-    for n1, n2 in zip(s1, s2):
-        if n1 != n2:
-            dist += 1
-        else: continue
+
+    dist = sum([1 for n1, n2 in zip(s1, s2) if n1 != n2])
 
     return dist
 

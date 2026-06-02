@@ -1,4 +1,4 @@
-with open("rosalind_fibd.txt") as f:
+with open("datasets/rosalind_fibd.txt") as f:
     data = f.read().strip().split(" ")
 
 N, m = map(int, data)

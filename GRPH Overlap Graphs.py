@@ -1,3 +1,6 @@
+import graphviz
+
+
 def parse_fasta(file_path):
     with open(file_path, "r") as f:
         s = f.read().strip().splitlines()
@@ -32,5 +35,12 @@ for i, seq in enumerate(sequences):
         if seq[-3:] == comp_seq[:3]:
             matches.append((names[i], compare_header[ic]))
 
+og = graphviz.Digraph("overlap-graph", comment="Genetic Sequence Overlap Graph")
+
+for n in names:
+    og.node(n)
+
 for s, t in matches:
+    og.edge(s, t)
     print(s, t)
+og.render(directory=".", view=True)

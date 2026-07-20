@@ -69,6 +69,8 @@ complete = "".join(CODON_TABLE.values())
 unique = set(i for i in CODON_TABLE.values())
 table = {}
 
+result = 3
+
 for i in unique:
     table[i] = complete.count(i)
 
